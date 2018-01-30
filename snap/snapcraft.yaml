@@ -15,7 +15,9 @@ parts:
     source-type: git
     source-branch: allwinner
     build: |
-      export CROSS_COMPILE=aarch64-linux-gnu-
+      if [ "$(arch)" = "x86_64" ]; then
+        export CROSS_COMPILE=aarch64-linux-gnu-
+      fi
       make PLAT=sun50iw1p1 bl31
     build-attributes: [no-install]
   u-boot:
