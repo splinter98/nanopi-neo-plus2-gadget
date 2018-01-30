@@ -26,8 +26,8 @@ parts:
     source-branch: v2018.01
     kdefconfig: 
       - nanopi_neo_plus2_ucore_defconfig
-    target-arch: arm
-    build-packages: [device-tree-compiler, libfdt-dev, python, curl, swig]
+    -arch: arm
+    build-packages: [device-tree-compiler, libfdt-dev, python-dev, curl, swig]
     after: [atf]
     prepare: |
       git apply ../../../uboot-*.patch
