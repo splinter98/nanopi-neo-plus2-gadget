@@ -26,7 +26,7 @@ parts:
     source-branch: v2018.01
     kdefconfig: 
       - nanopi_neo_plus2_ucore_defconfig
-    -arch: arm
+    target-arch: arm
     build-packages: [device-tree-compiler, libfdt-dev, python-dev, curl, swig]
     after: [atf]
     prepare: |
