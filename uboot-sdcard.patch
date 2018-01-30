@@ -1,0 +1,17 @@
+diff --git a/include/configs/sunxi-common.h b/include/configs/sunxi-common.h
+index 64a190059a..d9cc396114 100644
+--- a/include/configs/sunxi-common.h
++++ b/include/configs/sunxi-common.h
+@@ -149,8 +149,12 @@
+ #define CONFIG_SYS_MMC_MAX_DEVICE	4
+ #elif defined(CONFIG_ENV_IS_NOWHERE)
+ #define CONFIG_ENV_SIZE			(128 << 10)
++#elif defined(CONFIG_ENV_IS_IN_FAT)
++#define CONFIG_SYS_REDUNDAND_ENVIRONMENT
+ #endif
+ 
++#define CONFIG_SUPPORT_RAW_INITRD
++
+ #ifndef CONFIG_MACH_SUN8I_V3S
+ /* 64MB of malloc() pool */
+ #define CONFIG_SYS_MALLOC_LEN		(CONFIG_ENV_SIZE + (64 << 20))
